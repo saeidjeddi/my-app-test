@@ -28,6 +28,24 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
           appBar: AppBar(
             actions: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(8, 16, 8, 0),
+                child: Image.asset(
+                  'assets/images/icon.png',
+                  width: 32,
+                  height: 32,
+                ),
+              ),
+
+                            Padding(
+                padding: const EdgeInsets.fromLTRB(8, 16, 8, 0),
+                child: Text(
+                  'قیمت بروز ارزها',
+                  textDirection: TextDirection.rtl,
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+
               SizedBox(
                 width: 8,
               ),
@@ -42,22 +60,7 @@ class MyApp extends StatelessWidget {
                           height: 20,
                         ),
                       ))),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(8, 16, 8, 0),
-                child: Text(
-                  'قیمت بروز ارزها',
-                  textDirection: TextDirection.rtl,
-                  style: TextStyle(color: Colors.black),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(8, 16, 8, 0),
-                child: Image.asset(
-                  'assets/images/icon.png',
-                  width: 32,
-                  height: 32,
-                ),
-              ),
+
             ],
           ),
           body: Padding(
@@ -65,18 +68,18 @@ class MyApp extends StatelessWidget {
             child: Column(
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text(
-                      'نرخ ارز آزاد ',
-                    ),
-                    SizedBox(
-                      width: 8,
-                    ),
                     Image.asset(
                       'assets/images/12.png',
                       width: 15,
                       height: 15,
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    Text(
+                      'نرخ ارز آزاد ',
                     ),
                   ],
                 ),
