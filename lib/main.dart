@@ -51,6 +51,9 @@ class MyApp extends StatelessWidget{
               SizedBox(height: 8,),
               Text("برای اطلاع از نرخ ارز آزاد امروز به اینجا مراجعه کنید تا در لحظه از قیمت ها با خبر شوید .", textDirection: TextDirection.rtl, style: TextStyle(color: Colors.red, fontSize: 12),),
               SizedBox(height: 8,),
+              Row(
+                
+              ),
 
             ],
           ),
