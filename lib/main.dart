@@ -152,7 +152,10 @@ class HomeScreen extends StatelessWidget {
                     SizedBox(
                       height: 60,
                       child: TextButton.icon(
-                        onPressed: () => _showSnackBar(context, " بروزرسانی انجام شد .",),
+                        onPressed: () => _showSnackBar(
+                          context,
+                          " بروزرسانی انجام شد .",
+                        ),
                         icon: const Icon(
                           CupertinoIcons.refresh_bold,
                           size: 30,
@@ -185,7 +188,14 @@ class HomeScreen extends StatelessWidget {
 void _showSnackBar(BuildContext context, String msg) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
-      content: Text(msg),
+      content: Text(
+        msg,
+        style: TextStyle(
+            fontFamily: 'Tanha',
+            fontWeight: FontWeight.w900,
+            fontSize: 15,
+            color: Colors.black),
+      ),
       backgroundColor: Colors.green,
     ),
   );
