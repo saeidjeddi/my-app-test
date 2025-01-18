@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+        
         fontFamily: 'Estedad',
       ),
       debugShowCheckedModeBanner: false,
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         Locale('fa'), // persian
       ],
       home: Scaffold(
+        backgroundColor: Color.fromARGB(255, 245, 246, 255),
           appBar: AppBar(
             actions: [
               Padding(
@@ -36,8 +38,7 @@ class MyApp extends StatelessWidget {
                   height: 32,
                 ),
               ),
-
-                            Padding(
+              Padding(
                 padding: const EdgeInsets.fromLTRB(8, 16, 8, 0),
                 child: Text(
                   'قیمت بروز ارزها',
@@ -45,7 +46,6 @@ class MyApp extends StatelessWidget {
                   style: TextStyle(color: Colors.black),
                 ),
               ),
-
               SizedBox(
                 width: 8,
               ),
@@ -60,10 +60,9 @@ class MyApp extends StatelessWidget {
                           height: 20,
                         ),
                       ))),
-
             ],
           ),
-          body: Padding(
+          body: SingleChildScrollView(
             padding: const EdgeInsets.all(16.0),
             child: Column(
               children: [
@@ -95,7 +94,44 @@ class MyApp extends StatelessWidget {
                 SizedBox(
                   height: 8,
                 ),
-                Row(),
+
+                Container(
+                  width: double.infinity,
+                  height: 35,
+                  decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)),
+                  color: Color.fromARGB(255, 130, 130, 130),
+                  
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(' نام ارز '),
+                      Text('  قیمت '),
+                      Text('  تغییرات '),
+                      
+                      
+                    ],
+                  ),
+
+
+                
+                ),
+                Container(
+                  width: double.infinity,
+                  height: 400,
+                  color: Colors.amber,
+
+                  child: ListView(
+                  children: [
+                    Text('##'),
+                    Text('##'),
+                    Text('##'),
+                    Text('##'),
+                  ],
+                                ),
+                )
+
+
               ],
             ),
           )),
