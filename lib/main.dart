@@ -12,7 +12,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        
         fontFamily: 'Estedad',
       ),
       debugShowCheckedModeBanner: false,
@@ -27,7 +26,7 @@ class MyApp extends StatelessWidget {
         Locale('fa'), // persian
       ],
       home: Scaffold(
-        backgroundColor: Color.fromARGB(255, 245, 246, 255),
+          backgroundColor: Color.fromARGB(255, 245, 246, 255),
           appBar: AppBar(
             actions: [
               Padding(
@@ -94,13 +93,12 @@ class MyApp extends StatelessWidget {
                 SizedBox(
                   height: 8,
                 ),
-
                 Container(
                   width: double.infinity,
                   height: 35,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)),
-                  color: Color.fromARGB(255, 130, 130, 130),
-                  
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    color: Color.fromARGB(255, 130, 130, 130),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -108,33 +106,100 @@ class MyApp extends StatelessWidget {
                       Text(' نام ارز '),
                       Text('  قیمت '),
                       Text('  تغییرات '),
-                      
-                      
                     ],
                   ),
-
-
-                
+                ),
+                SizedBox(
+                  height: 8,
                 ),
                 Container(
-                  width: double.infinity,
-                  height: 400,
-                  color: Colors.amber,
-
-                  child: ListView(
-                  children: [
-                    Text('##'),
-                    Text('##'),
-                    Text('##'),
-                    Text('##'),
-                  ],
-                                ),
-                )
-
-
+                    width: double.infinity,
+                    height: 430,
+                    child: ListView.separated(
+                      physics: BouncingScrollPhysics(),
+                      itemCount: 20,
+                      itemBuilder: (BuildContext context, int position) {
+                        return Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Myitem(),
+                        );
+                      },
+                      separatorBuilder: (BuildContext context, int index) {
+                        if (index % 5== 0) {
+                          return Ads();
+                        } else {
+                          return SizedBox(
+                            width: 0,
+                          );
+                        }
+                      },
+                    )),
               ],
             ),
           )),
+    );
+  }
+}
+
+class Myitem extends StatelessWidget {
+  const Myitem({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      height: 50,
+      decoration: BoxDecoration(boxShadow: <BoxShadow>[
+        BoxShadow(
+          blurRadius: 1.0,
+          color: Colors.grey,
+        )
+      ], color: Colors.white, borderRadius: BorderRadius.circular(50)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Text(
+            'دلار',
+          ),
+          Text(
+            '5200000',
+          ),
+          Text(
+            '+50',
+            textDirection: TextDirection.ltr,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Ads extends StatelessWidget {
+  const Ads({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      height: 50,
+      decoration: BoxDecoration(boxShadow: <BoxShadow>[
+        BoxShadow(
+          blurRadius: 1.0,
+          color: Colors.grey,
+        )
+      ], color: Colors.red, borderRadius: BorderRadius.circular(50)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Text(
+            'تبلیغات برای شما با ما تماس بگیرید .',
+          ),
+        ],
+      ),
     );
   }
 }
